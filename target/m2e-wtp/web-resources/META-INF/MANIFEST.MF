@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Implementation-Title: jsf.library.games
+Implementation-Title: Library Games with JSF.
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: Sergio
 Implementation-Vendor-Id: com.ragnarok
