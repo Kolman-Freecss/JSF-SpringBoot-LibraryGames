@@ -1,41 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:custom="http://joinfaces.org/example"
-	xmlns:p="http://primefaces.org/ui">
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<title>Library Games</title>
+  <title>PrimeFaces DataTable Example</title>
 </h:head>
 
 <h:body>
-	<h:form id="helloworld-form">
 
-		<p:panel header="JSF with Spring Boot with JoinFaces.">
-			<h:panelGrid columns="2" cellpadding="4">
-				<h:outputText value="First Name: " />
-				<p:inputText id="first-name" value="#{game.name}" />
-				<ui:define name="content">
-					<p:panelGrid columns="1" layout="grid" id="panel">
-						<custom:custom-input id="customInput" />
-					</p:panelGrid>
-				</ui:define>
-				<h:outputText value="Years Old: " />
-				<p:inputText id="years-old" value="#{game.yearsOld}" />
+  <p:dataTable var="game" value="#{gameService.games}">
+    <p:column headerText="Id">
+      <h:outputText value="#{game.id}" />
+    </p:column>
 
-				<p:commandButton id="submit" value="Submit" update="greeting-panel" />
-			</h:panelGrid>
-		</p:panel>
+    <p:column headerText="Years">
+      <h:outputText value="#{game.yearsOld}" />
+    </p:column>
 
-		<p:dialog header="Greeting" widgetVar="greetingDialog" modal="true"
-			resizable="false">
-			<h:panelGrid id="greeting-panel" columns="1" cellpadding="4">
-				<h:outputText value="#{game.showName()}" />
-			</h:panelGrid>
-		</p:dialog>
+    <p:column headerText="Name">
+      <h:outputText value="#{game.name}" />
+    </p:column>
+    
+  </p:dataTable>
 
-	</h:form>
 </h:body>
 </html>
