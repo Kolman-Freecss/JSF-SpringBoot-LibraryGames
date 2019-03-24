@@ -14,7 +14,7 @@ import com.ragnarok.repositories.GameRepository;
 /**
  * Here we'll put the Logic that not concerns to querys from code to DB.
  * */
-@Named
+@Named(value = "gameService")
 @ViewScoped
 public class GameService implements Serializable{
 
@@ -37,5 +37,9 @@ public class GameService implements Serializable{
 		return games;
 	}
 	
+	public void submit()
+	{
+		System.out.println("Spy");
+	}
 	
 }

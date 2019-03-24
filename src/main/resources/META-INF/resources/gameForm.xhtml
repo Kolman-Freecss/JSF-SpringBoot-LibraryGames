@@ -7,13 +7,15 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<title>Library Games</title>
+	<title>Form Games</title>
 </h:head>
 
 <h:body>
-	<h:form id="helloworld-form">
+
+	<h:form id="game-form">
 
 		<p:panel header="JSF with Spring Boot with JoinFaces.">
+		
 			<h:panelGrid columns="2" cellpadding="4">
 				<h:outputText value="First Name: " />
 				<p:inputText id="first-name" value="#{game.name}" />
@@ -22,20 +24,16 @@
 						<custom:custom-input id="customInput" />
 					</p:panelGrid>
 				</ui:define>
+				
 				<h:outputText value="Years Old: " />
 				<p:inputText id="years-old" value="#{game.yearsOld}" />
 
-				<p:commandButton id="submit" value="Submit" update="greeting-panel" />
+				<p:commandButton id="submit" value="Submit" action="#{gameService.submit()}" />
+				
 			</h:panelGrid>
 		</p:panel>
-
-		<p:dialog header="Greeting" widgetVar="greetingDialog" modal="true"
-			resizable="false">
-			<h:panelGrid id="greeting-panel" columns="1" cellpadding="4">
-				<h:outputText value="#{game.showName()}" />
-			</h:panelGrid>
-		</p:dialog>
-
 	</h:form>
+
+	<p:button outcome="gameTable" value="Game Table" />
 </h:body>
 </html>

@@ -17,9 +17,19 @@ public class Game implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private int yearsOld = 1;
-	private String name = "APEX";
+	private int yearsOld;
+	private String name;
 	
+	public Game() {
+	}
+
+	public Game(Long id, int yearsOld, String name) {
+		super();
+		this.id = id;
+		this.yearsOld = yearsOld;
+		this.name = name;
+	}
+
 	public int getYearsOld() {
 		return yearsOld;
 	}

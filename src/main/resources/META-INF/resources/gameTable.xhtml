@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:h="http://java.sun.com/jsf/html"
-  xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-  <title>PrimeFaces DataTable Example</title>
+	<title>Library Games</title>
 </h:head>
 
 <h:body>
 
-  <p:dataTable var="game" value="#{gameService.games}">
-    <p:column headerText="Id">
-      <h:outputText value="#{game.id}" />
-    </p:column>
+	<p:dataTable var="game" value="#{gameService.games}">
+		<p:column headerText="Id">
+			<h:outputText value="#{game.id}" />
+		</p:column>
 
-    <p:column headerText="Years">
-      <h:outputText value="#{game.yearsOld}" />
-    </p:column>
+		<p:column headerText="Years">
+			<h:outputText value="#{game.yearsOld}" />
+		</p:column>
 
-    <p:column headerText="Name">
-      <h:outputText value="#{game.name}" />
-    </p:column>
-    
-  </p:dataTable>
+
+		<p:column headerText="Name">
+			<h:outputText value="#{game.name}" />
+		</p:column>
+
+	</p:dataTable>
+	
+	<p:button outcome="gameForm" value="Game Form"/>
 
 </h:body>
 </html>
